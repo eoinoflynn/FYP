@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 /* OppDb is the object connnection class - connecting to the mysql database*/
 /* The DriverManager class manages establishment of connections*/
 /* I use Class.forname() to specify to the DriverManager which JDBC driver to make the connection with*/
-/* After driver is registered with DRiverManager, can obtain a connection instance that is connected to the particular db by calling DriverManager.getConnection()*/
+/* After driver is registered with DriverManager, can obtain a connection instance that is connected to the particular db by calling DriverManager.getConnection()*/
 public class OppDb {
     
     Connection con;  

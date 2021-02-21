@@ -43,7 +43,15 @@ public class login extends HttpServlet {
             Connection con = db.getCon();
             Statement stmt = con.createStatement();
             stmt.executeUpdate("insert into user (name,pass) values('"+uname+"','"+pass+"')");
-            out.println("every thing is fine data is inserted");
+            /* out.println("every thing is fine data is inserted"); */
+            
+             /* code was taken and adapted from: "https://stackoverflow.com/questions/24176684/how-to-show-alert-in-a-jsp-from-a-servlet-and-then-redirect-to-another-jsp?fbclid=IwAR1aHDfhS-34Vx3NgwT1xpHmGnA9ki0-XjWNJGl4h_rJoQslKeBrDQfX4fg" */
+              /* The below code shows an alert in the jsp and redirects the user to the createopp.jsp location*/
+                out.println("<script type=\"text/javascript\">");
+                out.println("alert('The User has been created');");
+                out.println("location='signup.jsp';");
+                out.println("</script>");
+       
         } catch (SQLException ex) {
             Logger.getLogger(login.class.getName()).log(Level.SEVERE, null, ex);
         }
