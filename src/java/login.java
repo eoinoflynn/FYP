@@ -49,7 +49,7 @@ public class login extends HttpServlet {
               /* The below code shows an alert in the jsp and redirects the user to the createopp.jsp location*/
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('The User has been created');");
-                out.println("location='signup.jsp';");
+                out.println("location='homepage2.jsp';");
                 out.println("</script>");
        
         } catch (SQLException ex) {

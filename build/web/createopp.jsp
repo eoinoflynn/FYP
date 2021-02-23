@@ -46,7 +46,7 @@
                         <img src="assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html#top">DogTime</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="./homepage2.jsp">DogTime</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">

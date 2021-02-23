@@ -74,7 +74,7 @@
           <a href="#" class="list-group-item">Dog Walking</a>
           <a href="#" class="list-group-item">Dog Minding</a>
           <a href="#" class="list-group-item">Home</a>
-          <a href="./createuser.jsp" class="list-group-item">Create User</a>
+          <a href="./login.jsp" class="list-group-item">Create User</a>
           <a href="./createopportunity.jsp" class="list-group-item">Create Opportunity</a>
           <a href="./viewopportunity.jsp" class="list-group-item">View Opportunities</a>
         </div>

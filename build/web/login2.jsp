@@ -1,6 +1,6 @@
 <%-- 
-    Document   : createopp
-    Created on : 09-Feb-2021, 16:05:24
+    Document   : login2
+    Created on : 22-Feb-2021, 18:18:23
     Author     : eoinp
 --%>
 
@@ -46,7 +46,7 @@
                         <img src="assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="./homepage2.jsp">DogTime</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html#top">DogTime</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -76,12 +76,12 @@
     <div class="container">
         <div class="mbr-section-head">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                <strong>Create Opportunity</strong></h3>
+                <strong>Log-In</strong></h3>
             
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
-                 <form action="opportunity" method="post" class="mbr-form form-with-styler mx-auto"> <!-- data-form-title="Form Name", was inside tag to left -->
+                 <form action="<%=request.getContextPath()%>/Userlogin" method="post" class="mbr-form form-with-styler mx-auto"> <!-- data-form-title="Form Name", was inside tag to left -->
                <!--   <input type="hidden" name="email" data-form-email="true" value="jAoCsxRl1bQUHRg5NziKe8xbynZOJNkCn7AIuprD/HnBpk2DafQRyJ3YZvp5Bd7+9KlRyszQJv0+6P2ST1Eaiuf6znAWiCl+R4+IHQ2bm6nEe6BKkqzxJbpk9puRflzM"> -->
                     
                <!-- <div class="">
@@ -91,39 +91,14 @@
                     </div> -->
                  
                     <div class="dragArea row"> 
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="activity">
-                             <input type="text" name="activity" placeholder="Activity" class="form-control"  value="" id="name-form6-k">
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="name">
+                             <input type="text" name="name" placeholder="Username" class="form-control"  value="" id="name-form6-k">
                         </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="location">
-                            <input type="text" name="location" placeholder="Location" data-form-field="location" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="payment">
-                            <input type="text" name="payment" placeholder="Payment" data-form-field="payment" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="sdate">
-                            <input type="text" name="sdate" placeholder="Start Date" data-form-field="sdate" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="edate">
-                            <input type="text" name="edate" placeholder="End Date" data-form-field="edate" class="form-control" value="" id="email-form6-k" >
-                        </div>
-                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="length">
-                             <input type="text" name="length" placeholder="Length" data-form-field="length" class="form-control" value="" id="email-form6-k" >
-                        </div>
-                          <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="dname">
-                              <input type="text" name="dname" placeholder="Dog Name" data-form-field="dname" class="form-control" value="" id="email-form6-k">
-                        </div>
-                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="dbreed">
-                             <input type="text" name="dbreed" placeholder="Dog Breed" data-form-field="dbreed" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="dage">
-                            <input type="text" name="dage" placeholder="Dog Age" data-form-field="dage" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="additional">
-                            <input type="text" name="additional" placeholder="Additional Information" data-form-field="additional" class="form-control" value="" id="email-form6-k">
-                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="pass">
+                            <input type="text" name="pass" placeholder="Passsword" data-form-field="pass" class="form-control" value="" id="email-form6-k">
+                        </div>             
                         
-                        
-                        <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Create Opportunity</button></div>
+                        <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Log-In</button></div>
                     </div>
 
                 </form>
@@ -185,3 +160,4 @@
   
 </body>
 </html>
+

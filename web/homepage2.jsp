@@ -62,7 +62,7 @@
                     <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="./create.jsp">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="./login2.jsp">Login</a></div>
             </div>
         </div>
     </nav>
@@ -120,7 +120,7 @@
                         
                         <p class="mbr-text mbr-fonts-style mt-3 display-7">View available minding and walking opportunities and apply!</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="./viewopportunity.jsp" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="./viewopportunity2.jsp" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
                 </div>
             </div>
             

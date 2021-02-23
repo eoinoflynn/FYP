@@ -1,12 +1,38 @@
 <%-- 
-    Document   : createopp
-    Created on : 09-Feb-2021, 16:05:24
+    Document   : signup
+    Created on : 21-Feb-2021, 18:59:33
     Author     : eoinp
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<!-- Code taken and adapted from Retrieve data from database in jsp "https://www.roseindia.net/jsp/how-to-retrieve-data-from-database-in-jsp.shtml" -->
+<!-- Reading from the MySQL database - showing all opportunities created  -->
+
 <html  >
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+
+<%
+String driverName = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/mydb?useSSL=false";
+String userId = "root";
+String password = "Eventide1";
+
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
+
 <head>
   <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
   <meta charset="UTF-8">
@@ -74,59 +100,68 @@
     
     <div class="mbr-overlay"></div>
     <div class="container">
-        <div class="mbr-section-head">
+       <div class="mbr-section-head">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                <strong>Create Opportunity</strong></h3>
+                <strong>Available Opportunities</strong></h3>
             
-        </div>
+        </div> 
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
-                 <form action="opportunity" method="post" class="mbr-form form-with-styler mx-auto"> <!-- data-form-title="Form Name", was inside tag to left -->
-               <!--   <input type="hidden" name="email" data-form-email="true" value="jAoCsxRl1bQUHRg5NziKe8xbynZOJNkCn7AIuprD/HnBpk2DafQRyJ3YZvp5Bd7+9KlRyszQJv0+6P2ST1Eaiuf6znAWiCl+R4+IHQ2bm6nEe6BKkqzxJbpk9puRflzM"> -->
-                    
-               <!-- <div class="">
-                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">You have created an opportunity!</div>
-                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some
-                            problem!</div>
-                    </div> -->
-                 
-                    <div class="dragArea row"> 
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="activity">
-                             <input type="text" name="activity" placeholder="Activity" class="form-control"  value="" id="name-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="location">
-                            <input type="text" name="location" placeholder="Location" data-form-field="location" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="payment">
-                            <input type="text" name="payment" placeholder="Payment" data-form-field="payment" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="sdate">
-                            <input type="text" name="sdate" placeholder="Start Date" data-form-field="sdate" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="edate">
-                            <input type="text" name="edate" placeholder="End Date" data-form-field="edate" class="form-control" value="" id="email-form6-k" >
-                        </div>
-                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="length">
-                             <input type="text" name="length" placeholder="Length" data-form-field="length" class="form-control" value="" id="email-form6-k" >
-                        </div>
-                          <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="dname">
-                              <input type="text" name="dname" placeholder="Dog Name" data-form-field="dname" class="form-control" value="" id="email-form6-k">
-                        </div>
-                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="dbreed">
-                             <input type="text" name="dbreed" placeholder="Dog Breed" data-form-field="dbreed" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="dage">
-                            <input type="text" name="dage" placeholder="Dog Age" data-form-field="dage" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="additional">
-                            <input type="text" name="additional" placeholder="Additional Information" data-form-field="additional" class="form-control" value="" id="email-form6-k">
-                        </div>
-                        
-                        
-                        <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Create Opportunity</button></div>
-                    </div>
+                 <!-- <h2 align="center"><font><strong>Available Opportunities</strong></font></h2> -->
+<table align="center" cellpadding="10" cellspacing="10" border="1">
+<tr>
 
-                </form>
+</tr>
+<tr bgcolor="#6495ED">
+<td><b>Activity</b></td>
+<td><b>Location</b></td>
+<td><b>Payment</b></td>
+<td><b>Start Date</b></td>
+<td><b>End Date</b></td>
+<td><b>Length</b></td>
+<td><b>Dog Name</b></td>
+<td><b>Dog Breed</b></td>
+<td><b>Dog Age</b></td>
+<td><b>Additional Information</b></td>
+</tr>
+
+<!-- below we are getting the connection (.getconnection) -->
+<!-- and selecting all from the database-->
+<!-- then showing result set with resultset.next  -->
+<%
+try{ 
+connection = DriverManager.getConnection(connectionUrl, userId, password);
+statement=connection.createStatement();
+String sql ="SELECT * FROM opportunity";
+
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+%>
+<tr bgcolor="#E0FFFF">
+    
+    <!-- displaying the records one by one by using a while loop -->
+
+<td><%=resultSet.getString("activity") %></td>
+<td><%=resultSet.getString("location") %></td>
+<td><%=resultSet.getString("payment") %></td>
+<td><%=resultSet.getString("sdate") %></td>
+<td><%=resultSet.getString("edate") %></td>
+<td><%=resultSet.getString("length") %></td>
+<td><%=resultSet.getString("dname") %></td>
+<td><%=resultSet.getString("dbreed") %></td>
+<td><%=resultSet.getString("dage") %></td>
+<td><%=resultSet.getString("additional") %></td>
+
+</tr>
+
+<% 
+}
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+%>
+</table>
             </div>
         </div>
     </div>
