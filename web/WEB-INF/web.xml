@@ -16,6 +16,18 @@
         <servlet-name>opportunity</servlet-name>
         <servlet-class>opportunity</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loginowner</servlet-name>
+        <servlet-class>loginowner</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OpportunityServlet</servlet-name>
+        <servlet-class>com.xadmin.usermanagement.web.OpportunityServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>User1Servlet</servlet-name>
+        <servlet-class>com.xadmin.usermanagement.web.User1Servlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -32,6 +44,28 @@
         <servlet-name>opportunity</servlet-name>
         <url-pattern>/opportunity</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>loginowner</servlet-name>
+        <url-pattern>/loginowner</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OpportunityServlet</servlet-name>
+        <url-pattern>/opportunity/new</url-pattern>
+        <url-pattern>/opportunity/insert</url-pattern>
+        <url-pattern>/opportunity/delete</url-pattern>
+        <url-pattern>/opportunity/update</url-pattern>
+        <url-pattern>/opportunity/list</url-pattern>
+        <url-pattern>/opportunity/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>User1Servlet</servlet-name>
+        <url-pattern>/user/new</url-pattern>
+        <url-pattern>/user/insert</url-pattern>
+        <url-pattern>/user/delete</url-pattern>
+        <url-pattern>/user/update</url-pattern>
+        <url-pattern>/user/list</url-pattern>
+        <url-pattern>/user/edit</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -40,4 +74,8 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    <error-page>
+        <exception-type>java.lang.Exception</exception-type>
+        <location>/Error.jsp</location>
+    </error-page>
 </web-app>

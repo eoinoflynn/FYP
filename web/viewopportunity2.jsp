@@ -56,8 +56,11 @@ ResultSet resultSet = null;
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
-  
-  
+  <!-- Links for bootstrap table format -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="css/shop-homepage.css" rel="stylesheet">
   
 </head>
 <body>
@@ -99,20 +102,27 @@ ResultSet resultSet = null;
 <section class="form6 cid-so9ZTnVkON" id="form6-k">
     
     <div class="mbr-overlay"></div>
-    <div class="container">
+     <div class="container" style="max-width: 1490px">
        <div class="mbr-section-head">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
                 <strong>Available Opportunities</strong></h3>
             
         </div> 
-        <div class="row justify-content-center mt-4">
-            <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
+        <!-- <div class="row justify-content-center mt-4"> -->
+           <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
                  <!-- <h2 align="center"><font><strong>Available Opportunities</strong></font></h2> -->
-<table align="center" cellpadding="10" cellspacing="10" border="1">
-<tr>
+                 
+<!-- <table align="center" cellpadding="10" cellspacing="10" border="1"> -->
+<!-- <tr> -->
+<!-- </tr> -->
 
-</tr>
-<tr bgcolor="#6495ED">
+<!-- <div class="container"> -->
+    <div class="row col-md-6 custyle" >
+    <table class="table table-striped custab">
+    <thead>
+    <a href="./createopp.jsp" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new opportunities</a>
+        <tr>
+ <tr bgcolor="#acace6"> 
 <td><b>Activity</b></td>
 <td><b>Location</b></td>
 <td><b>Payment</b></td>
@@ -122,8 +132,13 @@ ResultSet resultSet = null;
 <td><b>Dog Name</b></td>
 <td><b>Dog Breed</b></td>
 <td><b>Dog Age</b></td>
-<td><b>Additional Information</b></td>
+<td><b>Additional</b></td>
+<!-- <th class="text-center">Action</th> -->
+<td><b>Action</b></td>
 </tr>
+<!-- <td><b>More</b></td>   -->
+<!-- </tr> -->
+
 
 <!-- below we are getting the connection (.getconnection) -->
 <!-- and selecting all from the database-->
@@ -151,7 +166,8 @@ while(resultSet.next()){
 <td><%=resultSet.getString("dbreed") %></td>
 <td><%=resultSet.getString("dage") %></td>
 <td><%=resultSet.getString("additional") %></td>
-
+ <td class="text-center"><a class='btn btn-info btn-xs' href=""><span class="glyphicon glyphicon-edit"></span> Apply</a> 
+<!-- <td><button type="submit" class="btn btn-primary display-4">View</button></td> -->
 </tr>
 
 <% 

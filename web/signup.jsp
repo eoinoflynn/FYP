@@ -99,6 +99,8 @@
                         </div>             
                         
                         <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Create User</button></div>
+                        &nbsp;
+                        <div class="col-auto mbr-section-btn align-center"><a class="btn btn-primary display-4" href="login2.jsp">Login</a></div>
                     </div>
 
                 </form>

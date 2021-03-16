@@ -107,9 +107,15 @@
                         
                         <p class="mbr-text mbr-fonts-style mt-3 display-7">Find someone to mind or walk your dog!</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="./createopp.jsp" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a onclick="demo()" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
                 </div>
             </div>
+            <script>
+                <!-- Displaying message on jsp page https://www.educba.com/jsp-alert/ -->
+function demo() {
+alert("You must log in as an Owner in order to create opportunities");
+}
+</script>
             <div class="item features-image сol-12 col-md-6 col-lg-6">
                 <div class="item-wrapper">
                     <div class="item-img">

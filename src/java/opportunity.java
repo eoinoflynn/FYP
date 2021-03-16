@@ -58,9 +58,9 @@ public class opportunity extends HttpServlet {
               /* The below code shows an alert in the jsp and redirects the user to the createopp.jsp location*/
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('The opportunity has been created');");
-                out.println("location='createopp.jsp';");
+                out.println("location='viewopportunity2.jsp';");
                 out.println("</script>");
-             
+                
 
     }   catch (SQLException ex) {
             Logger.getLogger(opportunity.class.getName()).log(Level.SEVERE, null, ex);
