@@ -5,7 +5,9 @@
  */
 package com.xadmin.usermanagement.web;
 
+import com.xadmin.usermanagement.bean.Application;
 import com.xadmin.usermanagement.bean.Opportunity;
+import com.xadmin.usermanagement.dao.ApplicationDao;
 import com.xadmin.usermanagement.dao.OpportunityDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,9 +24,11 @@ import javax.servlet.http.HttpServletResponse;
 public class OpportunityServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private OpportunityDao opportunityDao;
+        private ApplicationDao applicationDao;
    
  	public void init() {
 		opportunityDao = new OpportunityDao();
+                applicationDao = new ApplicationDao();
 	}  
         
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -54,6 +58,14 @@ public class OpportunityServlet extends HttpServlet {
             
         case "/opportunity/update":
             updateOpportunity(request, response);
+            break;
+            
+        case "/opportunity/apply":
+            showApplyForm(request, response);
+            break;
+        
+        case "/opportunity/confirm":
+            insertApplication(request, response);
             break;
             
         default:
@@ -122,6 +134,35 @@ public class OpportunityServlet extends HttpServlet {
 
 		Opportunity book = new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional);
 		opportunityDao.updateOpportunity(book);
+		response.sendRedirect("list");  
+    }
+    
+        //apply Opportunity
+    private void showApplyForm(HttpServletRequest request, HttpServletResponse response)throws SQLException, ServletException, IOException{
+        int id = Integer.parseInt(request.getParameter("id"));
+		Opportunity existingOpportunity = opportunityDao.selectOpportunity(id);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../apply-form3.jsp");
+		request.setAttribute("opportunity", existingOpportunity);
+		dispatcher.forward(request, response);                     
+    }
+    
+        //confirm apply opportunity
+     private void insertApplication(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+        int appid = Integer.parseInt(request.getParameter("appid"));
+		String activity = request.getParameter("activity");
+		String location = request.getParameter("location");
+		String payment = request.getParameter("payment"); //Int?
+                String sdate = request.getParameter("sdate");
+                String edate = request.getParameter("edate");
+                String length = request.getParameter("length");
+                String dname = request.getParameter("dname");
+                String dbreed = request.getParameter("dbreed");
+                String dage = request.getParameter("dage");    
+                String additional = request.getParameter("additional");
+                String name = request.getParameter("name");
+
+		Application newApplication = new Application(appid, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional, name);
+		applicationDao.updateApplication(newApplication);
 		response.sendRedirect("list");  
     }
     

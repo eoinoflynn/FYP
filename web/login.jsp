@@ -4,33 +4,60 @@
     Author     : eoinp
 --%>
 
-<!-- Original Log-In form, no longer in use -->
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
- pageEncoding="ISO-8859-1"%>
+<!-- unused, can most likely delete -->
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="utf-8">
+<title> Website</title>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
 </head>
 <body>
- <div align="center">
-  <h1>Employee Login Form</h1>
-  <form action="<%=request.getContextPath()%>/Userlogin" method="post">
-   <table style="with: 100%">
-    <tr>
-     <td>UserName</td>
-     <td><input type="text" name="name" /></td>
-    </tr>
-    <tr>
-     <td>Password</td>
-     <td><input type="text" name="pass" /></td>
-    </tr>
-
-   </table>
-   <input type="submit" value="Submit" />
-  </form>
- </div>
+    <div style="text-align: center">
+        <h1>Admin Login</h1>
+        <form action="UserLogin" method="post">
+            <label for="name">Name:</label>
+            <input name="name" size="30" />
+            <br><br>
+            <label for="pass">Password:</label>
+            <input type="pass" name="pass" size="30" />
+            <br>${message}
+            <br><br>           
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
+<script type="text/javascript">
+ 
+    $(document).ready(function() {
+        $("#loginForm").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+         
+                password: "required",
+            },
+             
+            messages: {
+                email: {
+                    required: "Please enter email",
+                    email: "Please enter a valid email address"
+                },
+                 
+                password: "Please enter password"
+            }
+        });
+ 
+    });
+</script>
 </html>

@@ -63,6 +63,7 @@
                     </li></ul>
                 
                 <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="./login2.jsp">Login</a></div>
+                <b>Welcome ${owner.name}</b>
             </div>
         </div>
     </nav>
@@ -120,7 +121,7 @@
                         
                         <p class="mbr-text mbr-fonts-style mt-3 display-7">View available minding and walking opportunities and apply!</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="./viewopportunityowner.jsp" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="opportunity/list" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
                 </div>
             </div>
             

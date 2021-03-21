@@ -5,12 +5,7 @@
  */
 package userlogin.database;
 
-/**
- *
- * @author eoinp
- */
-
-/* Below code taken and adapted from https://www.javaguides.net/2019/03/login-form-using-jsp-servlet-jdbc-mysql-example.html*/
+/* Below code taken and adapted from https://www.codejava.net/coding/how-to-code-login-and-logout-with-java-servlet-jsp-and-mysql*/
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -21,44 +16,31 @@ import userlogin.bean.UserLoginBean;
 
 public class UserLoginDao {
 
-    public boolean validate(UserLoginBean loginBean) throws ClassNotFoundException {
-        boolean status = false;
-
+    public UserLoginBean checkLogin(String name, String pass) throws SQLException,
+            ClassNotFoundException {
+        String jdbcURL = "jdbc:mysql://localhost:3306/mydb?useSSL=false";
+        String dbUser = "root";
+        String dbPassword = "Eventide1";
+ 
         Class.forName("com.mysql.jdbc.Driver");
-
-        try (Connection connection = DriverManager
-            .getConnection("jdbc:mysql://localhost:3306/mydb?useSSL=false","root","Eventide1");
-
-            // Step 2:Create a statement using connection object
-            PreparedStatement preparedStatement = connection
-            .prepareStatement("select * from user where name = ? and pass = ? ")) {
-            preparedStatement.setString(1, loginBean.getName());
-            preparedStatement.setString(2, loginBean.getPass());
-
-            System.out.println(preparedStatement);
-            ResultSet rs = preparedStatement.executeQuery();
-            status = rs.next();
-
-        } catch (SQLException e) {
-            // process sql exception
-            printSQLException(e);
+        Connection connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+        String sql = "SELECT * FROM user WHERE name = ? and pass = ?";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setString(1, name);
+        statement.setString(2, pass);
+ 
+        ResultSet result = statement.executeQuery();
+ 
+        UserLoginBean user = null;
+ 
+        if (result.next()) {
+            user = new UserLoginBean();
+            user.setName(result.getString("name"));
+            user.setPass(pass); //email?
         }
-        return status;
-    }
-
-    private void printSQLException(SQLException ex) {
-        for (Throwable e: ex) {
-            if (e instanceof SQLException) {
-                e.printStackTrace(System.err);
-                System.err.println("SQLState: " + ((SQLException) e).getSQLState());
-                System.err.println("Error Code: " + ((SQLException) e).getErrorCode());
-                System.err.println("Message: " + e.getMessage());
-                Throwable t = ex.getCause();
-                while (t != null) {
-                    System.out.println("Cause: " + t);
-                    t = t.getCause();
-                }
-            }
-        }
+ 
+        connection.close();
+ 
+        return user;
     }
 }

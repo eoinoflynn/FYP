@@ -62,7 +62,7 @@
                     <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="user/list">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="opportunity/list">Login</a></div>
             </div>
         </div>
     </nav>
@@ -81,7 +81,7 @@
                 
                 <p class="mbr-text mbr-fonts-style display-7">
                     Easy, quick and safe minding of your dog, <br>anytime, anywhere.</p>
-                <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="./whatareyou.jsp">Sign-up</a></div>
+                <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="./application.jsp">Sign-up</a></div>
             </div>
         </div>
     </div>

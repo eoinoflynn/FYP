@@ -28,6 +28,14 @@
         <servlet-name>User1Servlet</servlet-name>
         <servlet-class>com.xadmin.usermanagement.web.User1Servlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApplicationServlet</servlet-name>
+        <servlet-class>com.xadmin.usermanagement.web.ApplicationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>application</servlet-name>
+        <servlet-class>application</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomePageServlet</servlet-name>
         <url-pattern>/Home</url-pattern>
@@ -56,6 +64,8 @@
         <url-pattern>/opportunity/update</url-pattern>
         <url-pattern>/opportunity/list</url-pattern>
         <url-pattern>/opportunity/edit</url-pattern>
+        <url-pattern>/opportunity/apply</url-pattern>
+        <url-pattern>/opportunity/confirm</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>User1Servlet</servlet-name>
@@ -65,6 +75,14 @@
         <url-pattern>/user/update</url-pattern>
         <url-pattern>/user/list</url-pattern>
         <url-pattern>/user/edit</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ApplicationServlet</servlet-name>
+        <url-pattern>/application/insert</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>application</servlet-name>
+        <url-pattern>/application</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

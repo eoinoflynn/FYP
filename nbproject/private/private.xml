@@ -2,13 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/eoinp/OneDrive/Documents/NetBeansProjects/SampleProductViewer/src/java/com/xadmin/usermanagement/web/OpportunityServlet.java</file>
-            <file>file:/C:/Users/eoinp/OneDrive/Documents/NetBeansProjects/SampleProductViewer/src/java/com/xadmin/usermanagement/dao/OpportunityDao.java</file>
-            <file>file:/C:/Users/eoinp/OneDrive/Documents/NetBeansProjects/SampleProductViewer/src/java/com/xadmin/usermanagement/web/User1Servlet.java</file>
-            <file>file:/C:/Users/eoinp/OneDrive/Documents/NetBeansProjects/SampleProductViewer/src/java/com/xadmin/usermanagement/bean/Opportunity.java</file>
-            <file>file:/C:/Users/eoinp/OneDrive/Documents/NetBeansProjects/SampleProductViewer/src/java/com/xadmin/usermanagement/dao/User1Dao.java</file>
-            <file>file:/C:/Users/eoinp/OneDrive/Documents/NetBeansProjects/SampleProductViewer/src/java/com/xadmin/usermanagement/bean/User1.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

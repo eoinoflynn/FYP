@@ -1,12 +1,40 @@
 <%-- 
-    Document   : login2
-    Created on : 22-Feb-2021, 18:18:23
+    Document   : signup
+    Created on : 21-Feb-2021, 18:59:33
     Author     : eoinp
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<!-- Code taken and adapted from Retrieve data from database in jsp "https://www.roseindia.net/jsp/how-to-retrieve-data-from-database-in-jsp.shtml" -->
+<!-- Reading from the MySQL database - showing all opportunities created  -->
+
 <html  >
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+
+<%
+String driverName = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/mydb?useSSL=false";
+String userId = "root";
+String password = "Eventide1";
+
+String name = request.getParameter("name");
+
+try {
+Class.forName(driverName);
+} catch (ClassNotFoundException e) {
+e.printStackTrace();
+}
+
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
+
 <head>
   <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
   <meta charset="UTF-8">
@@ -30,14 +58,11 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
-  <!-- May need these for session login -->
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-<script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
-  
+  <!-- Links for bootstrap table format -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="css/shop-homepage.css" rel="stylesheet">
   
 </head>
 <body>
@@ -52,7 +77,7 @@
                         <img src="assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html#top">DogTime</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="./homepage2.jsp">DogTime</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -79,28 +104,85 @@
 <section class="form6 cid-so9ZTnVkON" id="form6-k">
     
     <div class="mbr-overlay"></div>
-    <div class="container">
-        <div class="mbr-section-head">
+     <div class="container" style="max-width: 1490px">
+       <div class="mbr-section-head">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                <strong>Log-In</strong></h3>
+                <strong>Available Opportunities</strong></h3>
             
-        </div>
-        <div class="row justify-content-center mt-4">
-            <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
-                 <form action="UserLogin" method="post" class="mbr-form form-with-styler mx-auto"> <!-- data-form-title="Form Name", was inside tag to left -->
+        </div> 
+        <!-- <div class="row justify-content-center mt-4"> -->
+           <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
+                 <!-- <h2 align="center"><font><strong>Available Opportunities</strong></font></h2> -->
                  
-                    <div class="dragArea row"> 
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="name">
-                             <input type="text" name="name" placeholder="Username" class="form-control"  value="" id="name-form6-k">
-                        </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="pass">
-                            <input type="text" name="pass" placeholder="Passsword" data-form-field="pass" class="form-control" value="" id="email-form6-k">
-                        </div>             
-                        <text class="align-center">${message}</text>
-                        <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Log-In</button></div>
-                    </div>
+<!-- <table align="center" cellpadding="10" cellspacing="10" border="1"> -->
+<!-- <tr> -->
+<!-- </tr> -->
 
-                </form>
+<!-- <div class="container"> -->
+    <div class="row col-md-6 custyle" >
+    <table class="table table-striped custab">
+    <thead>
+    <a href="./createopp.jsp" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new opportunities</a>
+        <tr>
+ <tr bgcolor="#acace6"> 
+<td><b>Activity</b></td>
+<td><b>Location</b></td>
+<td><b>Payment</b></td>
+<td><b>Start Date</b></td>
+<td><b>End Date</b></td>
+<td><b>Length</b></td>
+<td><b>Dog Name</b></td>
+<td><b>Dog Breed</b></td>
+<td><b>Dog Age</b></td>
+<td><b>Additional</b></td>
+<td><b>Name</b></td>
+
+<!-- <th class="text-center">Action</th> -->
+<td><b>Action</b></td>
+</tr>
+<!-- <td><b>More</b></td>   -->
+<!-- </tr> -->
+
+
+<!-- below we are getting the connection (.getconnection) -->
+<!-- and selecting all from the database-->
+<!-- then showing result set with resultset.next  -->
+<%
+try{ 
+connection = DriverManager.getConnection(connectionUrl, userId, password);
+statement=connection.createStatement();
+String sql ="SELECT * FROM application WHERE name ='"+name+"'";
+
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+%>
+<tr bgcolor="#E0FFFF">
+    
+    <!-- displaying the records one by one by using a while loop -->
+
+<td><%=resultSet.getString("activity") %></td>
+<td><%=resultSet.getString("location") %></td>
+<td><%=resultSet.getString("payment") %></td>
+<td><%=resultSet.getString("sdate") %></td>
+<td><%=resultSet.getString("edate") %></td>
+<td><%=resultSet.getString("length") %></td>
+<td><%=resultSet.getString("dname") %></td>
+<td><%=resultSet.getString("dbreed") %></td>
+<td><%=resultSet.getString("dage") %></td>
+<td><%=resultSet.getString("additional") %></td>
+<td><%=resultSet.getString("name") %></td>
+ <td class="text-center"><a class='btn btn-info btn-xs' href=""><span class="glyphicon glyphicon-edit"></span> Apply</a> 
+<!-- <td><button type="submit" class="btn btn-primary display-4">View</button></td> -->
+</tr>
+
+<% 
+}
+
+} catch (Exception e) {
+e.printStackTrace();
+}
+%>
+</table>
             </div>
         </div>
     </div>
@@ -158,30 +240,4 @@
   
   
 </body>
-<script type="text/javascript">
- 
-    $(document).ready(function() {
-        $("#loginForm").validate({
-            rules: {
-                email: {
-                    required: true,
-                    name: true
-                },
-         
-                pass: "required",
-            },
-             
-            messages: {
-                name: {
-                    required: "Please enter name",
-                    name: "Please enter a valid email address"
-                },
-                 
-                pass: "Please enter password"
-            }
-        });
- 
-    });
-</script>
 </html>
-

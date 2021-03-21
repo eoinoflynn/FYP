@@ -62,7 +62,8 @@
                     <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="./login2.jsp">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="opportunity/list">Login</a></div>
+                <b>Welcome ${user.name}</b>
             </div>
         </div>
     </nav>
@@ -81,7 +82,7 @@
                 
                 <p class="mbr-text mbr-fonts-style display-7">
                     Easy, quick and safe minding of your dog, <br>anytime, anywhere.</p>
-                <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="./signup.jsp">Sign-up</a></div>
+                <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="user/list">Sign-up</a></div>
             </div>
         </div>
     </div>
@@ -107,15 +108,15 @@
                         
                         <p class="mbr-text mbr-fonts-style mt-3 display-7">Find someone to mind or walk your dog!</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a onclick="demo()" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="./searchapplication.jsp" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
                 </div>
             </div>
-            <script>
-                <!-- Displaying message on jsp page https://www.educba.com/jsp-alert/ -->
+<!--            <script>
+                 Displaying message on jsp page https://www.educba.com/jsp-alert/ 
 function demo() {
 alert("You must log in as an Owner in order to create opportunities");
 }
-</script>
+</script>-->
             <div class="item features-image сol-12 col-md-6 col-lg-6">
                 <div class="item-wrapper">
                     <div class="item-img">

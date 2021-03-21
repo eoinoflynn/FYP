@@ -5,50 +5,51 @@
  */
 package userlogin.web;
 
-import java.io.IOException;
-
-/* Below code taken and adapted from https://www.javaguides.net/2019/03/login-form-using-jsp-servlet-jdbc-mysql-example.html*/
-
-import javax.servlet.ServletException;
+/* Below code taken and adapted from https://www.codejava.net/coding/how-to-code-login-and-logout-with-java-servlet-jsp-and-mysql*/
+ 
+import java.io.*;
+import java.sql.SQLException;
+ 
+import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 
 import userlogin.bean.UserLoginBean;
 import userlogin.database.UserLoginDao;
-
-@WebServlet("/Userlogin") /* changed from /login due to clash*/
+ 
+@WebServlet("/UserLogin")
 public class UserLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private UserLoginDao loginDao;
-
-    public void init() {
-        loginDao = new UserLoginDao();
+ 
+    public UserLoginServlet() {
+        super();
     }
-
+ 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-    throws ServletException, IOException {
-
+            throws ServletException, IOException {
         String name = request.getParameter("name");
         String pass = request.getParameter("pass");
-        UserLoginBean loginBean = new UserLoginBean();
-        loginBean.setName(name);
-        loginBean.setPass(pass);
-
+         
+        UserLoginDao userLoginDao = new UserLoginDao();
+         
         try {
-            if (loginDao.validate(loginBean)) {
-                //HttpSession session = request.getSession();
-                // session.setAttribute("username",username);
-                response.sendRedirect("homepage2.jsp"); /* was originally loginsuccess.jsp, now just directing to homepage*/
-            } else {
+            UserLoginBean user = userLoginDao.checkLogin(name, pass);
+            String destPage = "login2.jsp";
+             
+            if (user != null) {
                 HttpSession session = request.getSession();
-                //session.setAttribute("user", username);
-                response.sendRedirect("login2.jsp");
+                session.setAttribute("user", user);
+                destPage = "homepage2.jsp";
+            } else {
+                String message = "Invalid email/password";
+                request.setAttribute("message", message);
             }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+             
+            RequestDispatcher dispatcher = request.getRequestDispatcher(destPage);
+            dispatcher.forward(request, response);
+             
+        } catch (SQLException | ClassNotFoundException ex) {
+            throw new ServletException(ex);
         }
     }
 }

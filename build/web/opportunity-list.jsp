@@ -49,16 +49,16 @@
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>activity</th>
-						<th>location</th>
-						<th>payment</th>
-						<th>sdate</th>
-                                                <th>edate</th>
-                                                <th>length</th>
-                                                <th>dname</th>
-                                                <th>dbreed</th>
-                                                <th>dage</th>
-                                                <th>additional</th>
+						<th>Activity</th>
+						<th>Location</th>
+						<th>Payment</th>
+						<th>Start Date</th>
+                                                <th>End Date</th>
+                                                <th>Length</th>
+                                                <th>Dog Name</th>
+                                                <th>Dog Breed</th>
+                                                <th>Dog Age</th>
+                                                <th>Additional</th>
                                                 <th>Actions</th>
 					</tr>
 				</thead>
@@ -80,7 +80,9 @@
                                                         <td><c:out value="${opportunity.additional}" /></td>
 							<td><a href="edit?id=<c:out value='${opportunity.id}' />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="delete?id=<c:out value='${opportunity.id}' />">Delete</a></td>
+								href="delete?id=<c:out value='${opportunity.id}' />">Delete</a>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp; <a
+								href="apply?id=<c:out value='${opportunity.id}' />">Apply</a></td>
 						</tr>
 					</c:forEach>
 		

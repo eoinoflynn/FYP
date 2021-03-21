@@ -1,6 +1,6 @@
 <%-- 
-    Document   : loginowner
-    Created on : 09-Mar-2021, 16:11:59
+    Document   : login2
+    Created on : 22-Feb-2021, 18:18:23
     Author     : eoinp
 --%>
 
@@ -30,7 +30,13 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
-  
+  <!-- May need these for session login -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.min.js"></script>
   
   
 </head>
@@ -81,14 +87,7 @@
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
-                 <form action="<%=request.getContextPath()%>/Ownerlogin" method="post" class="mbr-form form-with-styler mx-auto"> <!-- data-form-title="Form Name", was inside tag to left -->
-               <!--   <input type="hidden" name="email" data-form-email="true" value="jAoCsxRl1bQUHRg5NziKe8xbynZOJNkCn7AIuprD/HnBpk2DafQRyJ3YZvp5Bd7+9KlRyszQJv0+6P2ST1Eaiuf6znAWiCl+R4+IHQ2bm6nEe6BKkqzxJbpk9puRflzM"> -->
-                    
-               <!-- <div class="">
-                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">You have created an opportunity!</div>
-                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some
-                            problem!</div>
-                    </div> -->
+                 <form action="OwnerLogin" method="post" class="mbr-form form-with-styler mx-auto"> <!-- data-form-title="Form Name", was inside tag to left -->
                  
                     <div class="dragArea row"> 
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="name">
@@ -97,7 +96,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="pass">
                             <input type="text" name="pass" placeholder="Passsword" data-form-field="pass" class="form-control" value="" id="email-form6-k">
                         </div>             
-                        
+                        <text class="align-center">${message}</text>
                         <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Log-In</button></div>
                     </div>
 
@@ -159,5 +158,30 @@
   
   
 </body>
+<script type="text/javascript">
+ 
+    $(document).ready(function() {
+        $("#loginForm").validate({
+            rules: {
+                email: {
+                    required: true,
+                    name: true
+                },
+         
+                pass: "required",
+            },
+             
+            messages: {
+                name: {
+                    required: "Please enter name",
+                    name: "Please enter a valid email address"
+                },
+                 
+                pass: "Please enter password"
+            }
+        });
+ 
+    });
+</script>
 </html>
 

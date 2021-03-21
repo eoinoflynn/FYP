@@ -57,7 +57,7 @@ public class OpportunityDao {
 				PreparedStatement preparedStatement = connection.prepareStatement(INSERT_OPPORTUNITY_SQL)) {
 			preparedStatement.setString(1, opportunity.getActivity());
 			preparedStatement.setString(2, opportunity.getLocation());
-			preparedStatement.setString(3, opportunity.getPayment());   //check if INt working
+			preparedStatement.setString(3, opportunity.getPayment());
                         preparedStatement.setString(4, opportunity.getSdate());
                         preparedStatement.setString(5, opportunity.getEdate());
                         preparedStatement.setString(6, opportunity.getLength());
@@ -138,7 +138,7 @@ public class OpportunityDao {
 		return opportunity;
     }
     
-    //update user
+    //update opportunity
     public boolean updateOpportunity(Opportunity opportunity) throws SQLException {
       boolean rowUpdated;
 		try (Connection connection = getConnection();
@@ -161,7 +161,7 @@ public class OpportunityDao {
 		return rowUpdated;
 	}
     
-    //delete user
+    //delete opportunity
     public boolean deleteOpportunity(int id) throws SQLException {
         boolean rowDeleted;
 		try (Connection connection = getConnection();
@@ -171,6 +171,29 @@ public class OpportunityDao {
 		}
 		return rowDeleted;
     }
+    
+        //confirm apply opportunity
+    public boolean confirmOpportunity(Opportunity opportunity) throws SQLException {
+      boolean rowUpdated;
+		try (Connection connection = getConnection();
+				PreparedStatement statement = connection.prepareStatement(UPDATE_OPPORTUNITY_SQL);) {
+			System.out.println("updated Opportunity:"+statement); //it was "updated USer:"?
+			statement.setString(1, opportunity.getActivity());
+			statement.setString(2, opportunity.getLocation());
+			statement.setString(3, opportunity.getPayment());
+                        statement.setString(4, opportunity.getSdate());
+                        statement.setString(5, opportunity.getEdate());
+                        statement.setString(6, opportunity.getLength());
+                        statement.setString(7, opportunity.getDname());
+                        statement.setString(8, opportunity.getDbreed());
+                        statement.setString(9, opportunity.getDage());
+                        statement.setString(10, opportunity.getAdditional());
+			statement.setInt(11, opportunity.getId());
+
+			rowUpdated = statement.executeUpdate() > 0;
+		}
+		return rowUpdated;
+	}
  
     
     
