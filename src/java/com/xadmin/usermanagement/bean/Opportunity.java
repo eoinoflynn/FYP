@@ -17,9 +17,9 @@ public class Opportunity {
     private String dbreed;
     private String dage;
     private String additional;
-    
-    
-     public Opportunity(String activity, String location, String payment, String sdate, String edate, String length, String dname, String dbreed, String dage, String additional) {
+    private String name;
+
+    public Opportunity(String activity, String location, String payment, String sdate, String edate, String length, String dname, String dbreed, String dage, String additional, String name) {
         this.activity = activity;
         this.location = location;
         this.payment = payment;
@@ -30,9 +30,10 @@ public class Opportunity {
         this.dbreed = dbreed;
         this.dage = dage;
         this.additional = additional;
+        this.name = name;
     }
-  
-    public Opportunity(int id, String activity, String location, String payment, String sdate, String edate, String length, String dname, String dbreed, String dage, String additional) {
+
+    public Opportunity(int id, String activity, String location, String payment, String sdate, String edate, String length, String dname, String dbreed, String dage, String additional, String name) {
         this.id = id;
         this.activity = activity;
         this.location = location;
@@ -44,7 +45,11 @@ public class Opportunity {
         this.dbreed = dbreed;
         this.dage = dage;
         this.additional = additional;
+        this.name = name;
     }
+    
+    
+ 
     
 
     public int getId() {
@@ -134,5 +139,13 @@ public class Opportunity {
    public void setAdditional(String additional) {
         this.additional = additional;
     }
-   
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
 }

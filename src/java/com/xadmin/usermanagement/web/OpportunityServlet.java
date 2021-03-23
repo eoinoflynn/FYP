@@ -19,6 +19,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import userlogin.bean.OwnerLoginBean;
 
 // @WebServlet("") //(name = "OpportunityServlet", urlPatterns = {"/OpportunityServlet"}) //@WebServlet("/") 
 public class OpportunityServlet extends HttpServlet {
@@ -68,6 +70,11 @@ public class OpportunityServlet extends HttpServlet {
             insertApplication(request, response);
             break;
             
+        case "/opportunity/list2":
+            listOpportunity2(request, response);
+            break;
+            
+            
         default:
             listOpportunity(request, response);
             break;
@@ -94,7 +101,8 @@ public class OpportunityServlet extends HttpServlet {
                 String dbreed = request.getParameter("dbreed");
                 String dage = request.getParameter("dage");    
                 String additional = request.getParameter("additional");
-                Opportunity newOpportunity = new Opportunity (activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional);
+                String name = request.getParameter("name");
+                Opportunity newOpportunity = new Opportunity (activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional, name);
 		opportunityDao.insertOpportunity(newOpportunity);
 		response.sendRedirect("list");
         
@@ -113,7 +121,7 @@ public class OpportunityServlet extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)throws SQLException, ServletException, IOException{
         int id = Integer.parseInt(request.getParameter("id"));
 		Opportunity existingOpportunity = opportunityDao.selectOpportunity(id);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../opportunity-form.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../opportunity-form2.jsp");
 		request.setAttribute("opportunity", existingOpportunity);
 		dispatcher.forward(request, response);                     
     }
@@ -131,8 +139,9 @@ public class OpportunityServlet extends HttpServlet {
                 String dbreed = request.getParameter("dbreed");
                 String dage = request.getParameter("dage");    
                 String additional = request.getParameter("additional");
+                String name = request.getParameter("name");
 
-		Opportunity book = new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional);
+		Opportunity book = new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional, name);
 		opportunityDao.updateOpportunity(book);
 		response.sendRedirect("list");  
     }
@@ -161,19 +170,31 @@ public class OpportunityServlet extends HttpServlet {
                 String additional = request.getParameter("additional");
                 String name = request.getParameter("name");
 
-		Application newApplication = new Application(appid, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional, name);
+		Application newApplication = new Application(appid, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional,name);
 		applicationDao.updateApplication(newApplication);
 		response.sendRedirect("list");  
     }
+     //list for users
+         private void listOpportunity2(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+		List<Opportunity> listOpportunity2 = opportunityDao.selectAllOpportunity();
+		request.setAttribute("listOpportunity2", listOpportunity2);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../opportunity-listuser.jsp");
+		dispatcher.forward(request, response);
+	}
     
     //default 
     
     private void listOpportunity(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
-		List<Opportunity> listOpportunity = opportunityDao.selectAllOpportunity();
+                HttpSession session = request.getSession();
+                OwnerLoginBean owner = (OwnerLoginBean) session.getAttribute("owner");
+		List<Opportunity> listOpportunity = opportunityDao.selectAllOpportunity(owner.getName());
 		request.setAttribute("listOpportunity", listOpportunity);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../opportunity-list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../opportunity-list2.jsp");
 		dispatcher.forward(request, response);
 	}
+    
+  
+    
     
 
 }

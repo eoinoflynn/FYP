@@ -39,7 +39,7 @@ public class OwnerLoginServlet extends HttpServlet {
             if (owner != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("owner", owner);
-                destPage = "homepageowner.jsp";
+                destPage = "homepageowner2.jsp";
             } else {
                 String message = "Invalid email/password";
                 request.setAttribute("message", message);

@@ -93,6 +93,12 @@
 				</fieldset>
                                                 
                                 <fieldset class="form-group">
+					<label>Owner name</label> <input type="text"
+						value="<c:out value='${opportunity.name}' />" readonly=""  class="form-control"
+						name="name">
+				</fieldset>
+                                                
+                                <fieldset class="form-group">
                                         <label>User name</label> <input type="text"
 						value="<c:out value='${user.name}' />" readonly=""  class="form-control"
 						name="name">

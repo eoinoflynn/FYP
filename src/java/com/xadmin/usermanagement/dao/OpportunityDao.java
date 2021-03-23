@@ -14,6 +14,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+//get parameter
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
+
+
 
 public class OpportunityDao {
     
@@ -22,14 +33,20 @@ public class OpportunityDao {
     private String jdbcPassword = "Eventide1";
     private String jdbcDriver = "com.mysql.jdbc.Driver"; 
     
-    private static final String INSERT_OPPORTUNITY_SQL = "INSERT INTO opportunity" + "  (activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional) VALUES "
+    String name = "name";
+
+    
+    
+    private static final String INSERT_OPPORTUNITY_SQL = "INSERT INTO opportunity" + "  (activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional, name) VALUES "
 			+ " (?, ?, ?,?, ?, ?, ?, ?, ?, ?);";
 
-	private static final String SELECT_OPPORTUNITY_BY_ID = "select id,activity,location,payment,sdate,edate,length,dname,dbreed,dage,additional from opportunity where id =?";
+	private static final String SELECT_OPPORTUNITY_BY_ID = "select id,activity,location,payment,sdate,edate,length,dname,dbreed,dage,additional, name from opportunity where id =?";
 	private static final String SELECT_ALL_OPPORTUNITY = "select * from opportunity";
 	private static final String DELETE_OPPORTUNITY_SQL = "delete from opportunity where id = ?;";
-	private static final String UPDATE_OPPORTUNITY_SQL = "update opportunity set activity = ?,location= ?, payment =?,sdate =?,edate =?,length =?,dname =?,dbreed =?,dage =?,additional =? where id = ?;";
-
+	private static final String UPDATE_OPPORTUNITY_SQL = "update opportunity set activity = ?,location= ?, payment =?,sdate =?,edate =?,length =?,dname =?,dbreed =?,dage =?,additional =?,name =? where id = ?;";
+                                                           //"select * from opportunity where name =?";
+        //private static final String SELECT_ALL_OPPORTUNITY1 = "SELECT * FROM opportunity WHERE name ='"+name+"'";
+        
     public OpportunityDao() {
     }
     
@@ -48,6 +65,17 @@ public class OpportunityDao {
 		return connection; 
     }
 
+    public class ServletGetParameter extends HttpServlet{
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
+	{
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		String name = request.getParameter("name");
+	}
+
+}
+
+
     //insert opportunity
     public void insertOpportunity(Opportunity opportunity) throws SQLException {  
  
@@ -65,6 +93,7 @@ public class OpportunityDao {
                         preparedStatement.setString(8, opportunity.getDbreed());
                         preparedStatement.setString(9, opportunity.getDage());
                         preparedStatement.setString(10, opportunity.getAdditional());
+                        preparedStatement.setString(11, opportunity.getName());
 			System.out.println(preparedStatement);
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
@@ -96,7 +125,8 @@ public class OpportunityDao {
                                 String dbreed = rs.getString("dbreed");
                                 String dage = rs.getString("dage");
                                 String additional = rs.getString("additional");
-				opportunity = new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional);
+                                String name = rs.getString("name");
+				opportunity = new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional,name);
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -113,7 +143,7 @@ public class OpportunityDao {
 
 				// Step 2:Create a statement using connection object
 			PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_OPPORTUNITY);) {
-			System.out.println(preparedStatement);
+		// ----	 preparedStatement.setString(1, opportunity.getName());
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 
@@ -130,7 +160,8 @@ public class OpportunityDao {
                                 String dbreed = rs.getString("dbreed");
                                 String dage = rs.getString("dage");
                                 String additional = rs.getString("additional");
-				opportunity.add(new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional));
+                                String name = rs.getString("name");
+				opportunity.add(new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional, name));
 			}
 		} catch (SQLException e) {
 			printSQLException(e);
@@ -154,7 +185,8 @@ public class OpportunityDao {
                         statement.setString(8, opportunity.getDbreed());
                         statement.setString(9, opportunity.getDage());
                         statement.setString(10, opportunity.getAdditional());
-			statement.setInt(11, opportunity.getId());
+                        statement.setString(11, opportunity.getName());
+			statement.setInt(12, opportunity.getId());
 
 			rowUpdated = statement.executeUpdate() > 0;
 		}
@@ -177,7 +209,7 @@ public class OpportunityDao {
       boolean rowUpdated;
 		try (Connection connection = getConnection();
 				PreparedStatement statement = connection.prepareStatement(UPDATE_OPPORTUNITY_SQL);) {
-			System.out.println("updated Opportunity:"+statement); //it was "updated USer:"?
+			System.out.println("updated Opportunity:"+statement); 
 			statement.setString(1, opportunity.getActivity());
 			statement.setString(2, opportunity.getLocation());
 			statement.setString(3, opportunity.getPayment());
@@ -188,7 +220,8 @@ public class OpportunityDao {
                         statement.setString(8, opportunity.getDbreed());
                         statement.setString(9, opportunity.getDage());
                         statement.setString(10, opportunity.getAdditional());
-			statement.setInt(11, opportunity.getId());
+                        statement.setString(11, opportunity.getName());
+			statement.setInt(12, opportunity.getId());
 
 			rowUpdated = statement.executeUpdate() > 0;
 		}
@@ -213,5 +246,43 @@ public class OpportunityDao {
 		}
 	}
     
+    
+        //select all opportunities
+    public List<Opportunity> selectAllOpportunity(String owner) {
+        // using try-with-resources to avoid closing resources (boiler plate code)
+		List<Opportunity> opportunity = new ArrayList<>();
+		// Step 1: Establishing a Connection
+                String sta = "select * from opportunity where name ='" + owner + "';";
+
+		try (Connection connection = getConnection();
+
+				// Step 2:Create a statement using connection object
+                        
+			PreparedStatement preparedStatement = connection.prepareStatement(sta)) {
+		// ----	 preparedStatement.setString(1, opportunity.getName());
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String activity = rs.getString("activity");
+				String location = rs.getString("location");
+				String payment = rs.getString("payment");
+                                String sdate = rs.getString("sdate");
+                                String edate = rs.getString("edate");
+                                String length = rs.getString("length");
+                                String dname = rs.getString("dname");
+                                String dbreed = rs.getString("dbreed");
+                                String dage = rs.getString("dage");
+                                String additional = rs.getString("additional");
+                                String name = rs.getString("name");
+				opportunity.add(new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional, name));
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return opportunity;
+    }
 
 }

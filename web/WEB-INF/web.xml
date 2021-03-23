@@ -66,6 +66,8 @@
         <url-pattern>/opportunity/edit</url-pattern>
         <url-pattern>/opportunity/apply</url-pattern>
         <url-pattern>/opportunity/confirm</url-pattern>
+        <url-pattern>/opportunity/list2</url-pattern>
+        <url-pattern>/opportunity/list3</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>User1Servlet</servlet-name>

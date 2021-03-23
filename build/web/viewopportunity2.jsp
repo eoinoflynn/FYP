@@ -10,7 +10,7 @@
 <!-- Code taken and adapted from Retrieve data from database in jsp "https://www.roseindia.net/jsp/how-to-retrieve-data-from-database-in-jsp.shtml" -->
 <!-- Reading from the MySQL database - showing all opportunities created  -->
 
-<html  >
+<html>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -57,10 +57,13 @@ ResultSet resultSet = null;
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
   <!-- Links for bootstrap table format -->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link href="css/shop-homepage.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> 
+   <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+    <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+    <link href="css/shop-homepage.css" rel="stylesheet"> -->
+    
+    <!-- search-->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   
 </head>
 <body>
@@ -110,17 +113,26 @@ ResultSet resultSet = null;
         </div> 
         <!-- <div class="row justify-content-center mt-4"> -->
            <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
-                 <!-- <h2 align="center"><font><strong>Available Opportunities</strong></font></h2> -->
-                 
-<!-- <table align="center" cellpadding="10" cellspacing="10" border="1"> -->
-<!-- <tr> -->
-<!-- </tr> -->
 
-<!-- <div class="container"> -->
     <div class="row col-md-6 custyle" >
     <table class="table table-striped custab">
     <thead>
-    <a href="./createopp.jsp" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new opportunities</a>
+    <div class="container">
+	<div class="row">
+           <div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <form action="./viewopportunitylocation.jsp" method="post">
+                                <input name ="location" value ="" class="  search-query form-control" placeholder="Search" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-danger" type="button">
+                                        <span class=" glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                                </form>
+                            </div>
+                        </div>
+	</div>
+</div>
         <tr>
  <tr bgcolor="#acace6"> 
 <td><b>Activity</b></td>

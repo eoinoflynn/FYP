@@ -3,13 +3,6 @@
     Created on : 09-Mar-2021, 18:01:37
     Author     : eoinp
 --%>
-
-<%-- 
-    Document   : signup
-    Created on : 21-Feb-2021, 18:59:33
-    Author     : eoinp
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
@@ -27,6 +20,8 @@ String driverName = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/mydb?useSSL=false";
 String userId = "root";
 String password = "Eventide1";
+
+String name = request.getParameter("name");
 
 try {
 Class.forName(driverName);
@@ -114,15 +109,9 @@ ResultSet resultSet = null;
                 <strong>Available Opportunities</strong></h3>
             
         </div> 
-        <!-- <div class="row justify-content-center mt-4"> -->
-           <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
-                 <!-- <h2 align="center"><font><strong>Available Opportunities</strong></font></h2> -->
-                 
-<!-- <table align="center" cellpadding="10" cellspacing="10" border="1"> -->
-<!-- <tr> -->
-<!-- </tr> -->
 
-<!-- <div class="container"> -->
+           <div class="col-lg-8 mx-auto mbr-form"> 
+
     <div class="row col-md-6 custyle" >
     <table class="table table-striped custab">
     <thead>
@@ -152,11 +141,13 @@ ResultSet resultSet = null;
 try{ 
 connection = DriverManager.getConnection(connectionUrl, userId, password);
 statement=connection.createStatement();
-String sql ="SELECT * FROM opportunity";
+String sql ="SELECT * FROM opportunity WHERE name ='"+name+"'";
 
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
+
+<c:forEach var="opportunity" items="${listOpportunity}">
 <tr bgcolor="#E0FFFF">
     
     <!-- displaying the records one by one by using a while loop -->
@@ -172,9 +163,10 @@ while(resultSet.next()){
 <td><%=resultSet.getString("dage") %></td>
 <td><%=resultSet.getString("additional") %></td>
 <!-- edit/delete buttons taken and adapted from https://bootsnipp.com/snippets/Pjo1 -->
-<td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+<td class="text-center"><a class='btn btn-info btn-xs' href="update.jsp?id=<%=resultSet.getString("id")%>"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a class="btn btn-danger btn-xs" href="delete.jsp?id=<%=resultSet.getString("id") %>"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
 </tr>
-
+</c:forEach>
+		
 
 <% 
 }

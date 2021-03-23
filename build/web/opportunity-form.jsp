@@ -4,6 +4,8 @@
     Author     : eoinp
 --%>
 
+<!-- Currently using opportunity-form2.jsp -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -115,6 +117,12 @@
 					<label>opportunity additional</label> <input type="text"
 						value="<c:out value='${opportunity.additional}' />" class="form-control"
 						name="additional">
+				</fieldset>
+                                                
+                                <fieldset class="form-group">
+					<label>opportunity name</label> <input type="text"
+						value="<c:out value='${opportunity.name}' />" class="form-control"
+						name="name">
 				</fieldset>
 
 				<button type="submit" class="btn btn-success">Save</button>

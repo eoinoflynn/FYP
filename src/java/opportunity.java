@@ -47,11 +47,12 @@ public class opportunity extends HttpServlet {
             String dbreed = request.getParameter("dbreed");
             String dage = request.getParameter("dage");
             String additional = request.getParameter("additional");
+            String name = request.getParameter("name");
             
             OppDb db = new OppDb(); /* Creating an object connection class*/
             Connection con = db.getCon();
             Statement stmt = con.createStatement();
-             stmt.executeUpdate("insert into opportunity (activity,location,payment,sdate,edate,length,dname,dbreed,dage,additional) values('"+activity+"','"+location+"','"+payment+"','"+sdate+"','"+edate+"','"+length+"','"+dname+"','"+dbreed+"','"+dage+"','"+additional+"')");
+             stmt.executeUpdate("insert into opportunity (activity,location,payment,sdate,edate,length,dname,dbreed,dage,additional, name) values('"+activity+"','"+location+"','"+payment+"','"+sdate+"','"+edate+"','"+length+"','"+dname+"','"+dbreed+"','"+dage+"','"+additional+"','"+name+"')");
              /* out.println("the opportunity has been created"); */
              
              /* code was taken and adapted from: "https://stackoverflow.com/questions/24176684/how-to-show-alert-in-a-jsp-from-a-servlet-and-then-redirect-to-another-jsp?fbclid=IwAR1aHDfhS-34Vx3NgwT1xpHmGnA9ki0-XjWNJGl4h_rJoQslKeBrDQfX4fg" */

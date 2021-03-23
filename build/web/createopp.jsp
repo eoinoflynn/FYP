@@ -80,16 +80,9 @@
             
         </div>
         <div class="row justify-content-center mt-4">
-            <div class="col-lg-8 mx-auto mbr-form"> <!-- data-form-type="formoid", was inside tag to left -->
-                 <form action="opportunity" method="post" class="mbr-form form-with-styler mx-auto"> <!-- data-form-title="Form Name", was inside tag to left -->
-               <!--   <input type="hidden" name="email" data-form-email="true" value="jAoCsxRl1bQUHRg5NziKe8xbynZOJNkCn7AIuprD/HnBpk2DafQRyJ3YZvp5Bd7+9KlRyszQJv0+6P2ST1Eaiuf6znAWiCl+R4+IHQ2bm6nEe6BKkqzxJbpk9puRflzM"> -->
-                    
-               <!-- <div class="">
-                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">You have created an opportunity!</div>
-                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some
-                            problem!</div>
-                    </div> -->
-                 
+            <div class="col-lg-8 mx-auto mbr-form">
+                 <form action="opportunity" method="post" class="mbr-form form-with-styler mx-auto"> 
+
                     <div class="dragArea row"> 
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="activity">
                              <input type="text" name="activity" placeholder="Activity" class="form-control"  value="" id="name-form6-k">
@@ -120,6 +113,9 @@
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="additional">
                             <input type="text" name="additional" placeholder="Additional Information" data-form-field="additional" class="form-control" value="" id="email-form6-k">
+                        </div>
+                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="name">
+                            <input type="text" name="name" placeholder="Owner Email" data-form-field="name" class="form-control" value="" id="email-form6-k">
                         </div>
                         
                         

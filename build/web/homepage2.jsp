@@ -104,9 +104,9 @@
                         <img src="assets/images/jamie-street-wco2pwluq3u-unsplash.jpg" alt="" title="">
                     </div>
                     <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><strong>Create Opportunity</strong></h5>
+                        <h5 class="item-title mbr-fonts-style display-5"><strong>View Applications</strong></h5>
                         
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Find someone to mind or walk your dog!</p>
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7">View your current applications!</p>
                     </div>
                     <div class="mbr-section-btn item-footer mt-2"><a href="./searchapplication.jsp" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
                 </div>
@@ -127,7 +127,7 @@ alert("You must log in as an Owner in order to create opportunities");
                         
                         <p class="mbr-text mbr-fonts-style mt-3 display-7">View available minding and walking opportunities and apply!</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="./viewopportunity2.jsp" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="opportunity/list2" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
                 </div>
             </div>
             

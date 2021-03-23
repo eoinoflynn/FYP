@@ -4,6 +4,8 @@
     Author     : eoinp
 --%>
 
+<!-- Currently using opportunity-list2.jsp -->
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
@@ -59,6 +61,7 @@
                                                 <th>Dog Breed</th>
                                                 <th>Dog Age</th>
                                                 <th>Additional</th>
+                                                <th>Name</th>
                                                 <th>Actions</th>
 					</tr>
 				</thead>
@@ -78,11 +81,10 @@
                                                         <td><c:out value="${opportunity.dbreed}" /></td>
                                                         <td><c:out value="${opportunity.dage}" /></td>
                                                         <td><c:out value="${opportunity.additional}" /></td>
+                                                        <td><c:out value="${opportunity.name}" /></td>
 							<td><a href="edit?id=<c:out value='${opportunity.id}' />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
 								href="delete?id=<c:out value='${opportunity.id}' />">Delete</a>
-                                                                &nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="apply?id=<c:out value='${opportunity.id}' />">Apply</a></td>
 						</tr>
 					</c:forEach>
 		
