@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author eoinp
+ * Code taken and adapted from Java Database connectivity "https://www.youtube.com/watch?v=akW6bzoRcZo&app=desktop"
  */
 public class application extends HttpServlet {
 
@@ -39,18 +39,21 @@ public class application extends HttpServlet {
             String dage = request.getParameter("dage");
             String additional = request.getParameter("additional");
             String name = request.getParameter("name");
+            String userName = request.getParameter("userName");
+//            String status = request.getParameter("status");
+//            String message = request.getParameter("message");
             
             OppDb db = new OppDb(); /* Creating an object connection class*/
             Connection con = db.getCon();
             Statement stmt = con.createStatement();
-             stmt.executeUpdate("insert into application (activity,location,payment,sdate,edate,length,dname,dbreed,dage,additional,name) values('"+activity+"','"+location+"','"+payment+"','"+sdate+"','"+edate+"','"+length+"','"+dname+"','"+dbreed+"','"+dage+"','"+additional+"','"+name+"')");
+             stmt.executeUpdate("insert into application (activity,location,payment,sdate,edate,length,dname,dbreed,dage,additional,name,userName) values('"+activity+"','"+location+"','"+payment+"','"+sdate+"','"+edate+"','"+length+"','"+dname+"','"+dbreed+"','"+dage+"','"+additional+"','"+name+"','"+userName+"')");
              /* out.println("the opportunity has been created"); */
              
              /* code was taken and adapted from: "https://stackoverflow.com/questions/24176684/how-to-show-alert-in-a-jsp-from-a-servlet-and-then-redirect-to-another-jsp?fbclid=IwAR1aHDfhS-34Vx3NgwT1xpHmGnA9ki0-XjWNJGl4h_rJoQslKeBrDQfX4fg" */
               /* The below code shows an alert in the jsp and redirects the user to the createopp.jsp location*/
                 out.println("<script type=\"text/javascript\">");
-                out.println("alert('The application has been created');");
-                out.println("location='viewopportunity2.jsp';");
+//                out.println("alert('Your application has been submitted');");
+                out.println("location='application/listuser';");
                 out.println("</script>");
                 
 

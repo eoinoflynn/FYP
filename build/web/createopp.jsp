@@ -42,11 +42,11 @@
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobiri.se">
-                        <img src="assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
+                    <a href="./homepageowner2.jsp">
+                        <img src="images/dogicon2.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="./homepage2.jsp">DogTime</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="./homepageowner2.jsp">DogTime</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -58,13 +58,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#features4-5">
-                            Services</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#image1-6">
+                            Services</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="./homepageowner2.jsp">
                             About us</a></li>
                     
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="./homepageowner2.jsp">Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="create.jsp">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="LogoutOwner">Log-out</a></div>
             </div>
         </div>
     </nav>
@@ -115,7 +115,7 @@
                             <input type="text" name="additional" placeholder="Additional Information" data-form-field="additional" class="form-control" value="" id="email-form6-k">
                         </div>
                          <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="name">
-                            <input type="text" name="name" placeholder="Owner Email" data-form-field="name" class="form-control" value="" id="email-form6-k">
+                            <input type="text" name="name" placeholder="Owner Email" data-form-field="name" class="form-control" value="${owner.name}" id="email-form6-k" readonly>
                         </div>
                         
                         
@@ -143,7 +143,7 @@
                     
                     
                     
-                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#features4-5" class="text-white">Services</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#image1-6" class="text-white">About us</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#contacts1-7" class="text-white">Contact us</a></li></ul>
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="./homepageowner2.jsp" class="text-white">Services</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="./homepageowner2.jsp" class="text-white">About us</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="./homepageowner2.jsp" class="text-white">Contact us</a></li></ul>
             </div>
             <div class="row social-row">
                 <div class="social-list align-right pb-2">

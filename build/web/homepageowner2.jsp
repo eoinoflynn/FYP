@@ -33,8 +33,8 @@
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobiri.se">
-                        <img src="assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
+                    <a href="./homepageowner2.jsp">
+                        <img src="images/dogicon2.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html#top">DogTime</a></span>
@@ -55,7 +55,7 @@
                     <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="./login2.jsp">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="LogoutOwner">Log-out</a></div>
                 <b>Welcome ${owner.name}</b>
             </div>
         </div>
@@ -75,7 +75,7 @@
                 
                 <p class="mbr-text mbr-fonts-style display-7">
                     Easy, quick and safe minding of your dog, <br>anytime, anywhere.</p>
-                <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="./signup.jsp">Sign-up</a></div>
+                <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="application/list">Sign-up</a></div>
             </div>
         </div>
     </div>
@@ -102,7 +102,7 @@
                         
                         <p class="mbr-text mbr-fonts-style mt-3 display-7">View applications to your posted opportunities!</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="./searchopportunity.jsp" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="application/list" class="btn item-btn btn-black display-7" target="_blank">Start Now &gt;</a></div>
                 </div>
             </div><div class="item features-image ?ol-12 col-md-6 col-lg-4">
                 <div class="item-wrapper">

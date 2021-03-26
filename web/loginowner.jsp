@@ -48,11 +48,11 @@
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobiri.se">
-                        <img src="assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
+                    <a href="./whatareyou.jsp">
+                        <img src="images/dogicon2.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html#top">DogTime</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="./landingpage.jsp">DogTime</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -67,10 +67,10 @@
                             Services</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#image1-6">
                             About us</a></li>
                     
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="./landingpage.jsp#contacts1-7">Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="create.jsp">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="./loginowner.jsp">Login</a></div>
             </div>
         </div>
     </nav>
@@ -91,19 +91,22 @@
                  
                     <div class="dragArea row"> 
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="name">
-                             <input type="text" name="name" placeholder="Username" class="form-control"  value="" id="name-form6-k">
+                             <input type="text" name="name" placeholder="Email" class="form-control"  value="" id="name-form6-k">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="pass">
                             <input type="text" name="pass" placeholder="Passsword" data-form-field="pass" class="form-control" value="" id="email-form6-k">
                         </div>             
                         <text class="align-center">${message}</text>
                         <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Log-In</button></div>
+                        &nbsp;
+                        <div class="col-auto mbr-section-btn align-center"><a class="btn btn-primary display-4" href="signupowner.jsp">Sign-Up</a></div>
                     </div>
 
                 </form>
             </div>
         </div>
     </div>
+                        
 </section>
 
 <section class="footer3 cid-snYuw7jeYm" once="footers" id="footer3-j">
@@ -156,7 +159,7 @@
     </div>
 </section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/n" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Made with Mobirise - <a href="https://mobirise.site/l" style="color:#aaa;">Find out</a></p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/dropdown/js/nav-dropdown.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="assets/formstyler/jquery.formstyler.js"></script>  <script src="assets/formstyler/jquery.formstyler.min.js"></script>  <script src="assets/datepicker/jquery.datetimepicker.full.js"></script>  <script src="assets/theme/js/script.js"></script>  <script src="assets/formoid/formoid.min.js"></script>  
   
-  
+   <!-- Below code taken and adapted from https://www.codejava.net/coding/how-to-code-login-and-logout-with-java-servlet-jsp-and-mysql--> 
 </body>
 <script type="text/javascript">
  

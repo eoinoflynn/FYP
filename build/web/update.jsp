@@ -2,6 +2,7 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
+<!-- page not in use -->
 <%
 String id = request.getParameter("id");
 String driver = "com.mysql.jdbc.Driver";

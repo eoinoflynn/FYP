@@ -40,8 +40,8 @@
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobiri.se">
-                        <img src="assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
+                    <a href="./whatareyou.jsp">
+                        <img src="images/dogicon2.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html#top">DogTime</a></span>
@@ -55,14 +55,14 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#features4-5">
-                            Services</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#image1-6">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="./landingpage.jsp#features4-5">
+                            Services</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="./landingpage.jsp#image1-6">
                             About us</a></li>
                     
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="./landingpage.jsp#contacts1-7">Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="homepageowner2.jsp">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="./whatareyou.jsp">Login</a></div>
             </div>
         </div>
     </nav>
@@ -88,7 +88,7 @@
                         
                         <p class="mbr-text mbr-fonts-style mt-3 display-7">Find someone to mind or walk your dog!</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="./signupowner.jsp" class="btn item-btn btn-black display-7" target="_blank">Continue &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="./loginowner.jsp" class="btn item-btn btn-black display-7" target="_blank">Continue &gt;</a></div>
                 </div>
             </div>
             <div class="item features-image сol-12 col-md-6 col-lg-6">
@@ -101,13 +101,21 @@
                         
                         <p class="mbr-text mbr-fonts-style mt-3 display-7">View available minding and walking opportunities and apply!</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="./signup.jsp" class="btn item-btn btn-black display-7" target="_blank">Continue &gt;</a></div>
+                    <div class="mbr-section-btn item-footer mt-2"><a href="./login2.jsp" class="btn item-btn btn-black display-7" target="_blank">Continue &gt;</a></div>
                 </div>
             </div>
             
             
         </div>
     </div>
+                                       <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>&nbsp;</strong></h3>
+                           <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>&nbsp;</strong></h3>
+                           <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>&nbsp;</strong></h3>
+
+
 </section>
 
 <section class="footer3 cid-snYuw7jeYm" once="footers" id="footer3-8">

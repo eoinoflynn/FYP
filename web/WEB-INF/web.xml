@@ -68,6 +68,8 @@
         <url-pattern>/opportunity/confirm</url-pattern>
         <url-pattern>/opportunity/list2</url-pattern>
         <url-pattern>/opportunity/list3</url-pattern>
+        <url-pattern>/opportunity/listLocation</url-pattern>
+        <url-pattern>/opportunity/listLocationOwner</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>User1Servlet</servlet-name>
@@ -80,7 +82,16 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ApplicationServlet</servlet-name>
+        <url-pattern>/application/new</url-pattern>
+        <url-pattern>/application/edit</url-pattern>
+        <url-pattern>/application/update</url-pattern>
+        <url-pattern>/application/list</url-pattern>
         <url-pattern>/application/insert</url-pattern>
+        <url-pattern>/application/listuser</url-pattern>
+        <url-pattern>/application/delete</url-pattern>
+        <url-pattern>/application/deleteuser</url-pattern>
+        <url-pattern>/application/listLocation</url-pattern>
+        <url-pattern>/application/listLocationOwner</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>application</servlet-name>

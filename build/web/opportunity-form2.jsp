@@ -59,11 +59,11 @@
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobiri.se">
-                        <img src="../assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
+                    <a href="../homepageowner2.jsp">
+                        <img src="../images/dogicon2.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="./homepage2.jsp">DogTime</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="../homepageowner2.jsp" style="font-size: 20px;">DogTime</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -74,14 +74,14 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#features4-5">
-                            Services</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#image1-6">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="../homepageowner.jsp" style="font-size: 18px;">
+                            Services</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="../homepageowner2.jsp" style="font-size: 18px;" >
                             About us</a></li>
                     
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="../homepageowner2.jsp" style="font-size: 18px;" >Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="create.jsp">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="../LogoutOwner" style="font-size: 18px;">Log-out</a></div>
             </div>
         </div>
     </nav>
@@ -172,7 +172,7 @@
                          <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="name">
                            <input type="text"
 						value="<c:out value='${opportunity.name}' />" class="form-control"
-						name="name" id="email-form6-k">
+						name="name" id="email-form6-k" readonly>
                         </div>
                         
                         
@@ -181,6 +181,10 @@
 			</div>
 		</div>
 	</div>
+                                                                           <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>&nbsp;</strong></h3>
+                               <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong>&nbsp;</strong></h3>
 </section>
 
 <section class="footer3 cid-snYuw7jeYm" once="footers" id="footer3-j">
@@ -198,7 +202,7 @@
                     
                     
                     
-                <li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#features4-5" class="text-white">Services</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#image1-6" class="text-white">About us</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="index.html#contacts1-7" class="text-white">Contact us</a></li></ul>
+                <li class="foot-menu-item mbr-fonts-style display-7"><a href="../homepageowner2.jsp" class="text-white" style="font-size: 18px;">Services</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="../homepageowner2.jsp" class="text-white" style="font-size: 18px;">About us</a></li><li class="foot-menu-item mbr-fonts-style display-7"><a href="../homepageowner2.jsp" class="text-white" style="font-size: 18px;">Contact us</a></li></ul>
             </div>
             <div class="row social-row">
                 <div class="social-list align-right pb-2">
@@ -209,25 +213,25 @@
                     
                     
                 <div class="soc-item">
-                        <a href="https://twitter.com/mobirise" target="_blank">
-                            <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                        <a href="https://twitter.com/" target="_blank">
+                            <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social" style="font-size: 23px;"></span>
                         </a>
                     </div><div class="soc-item">
-                        <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
-                            <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                        <a href="https://www.facebook.com/" target="_blank">
+                            <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social" style="font-size: 23px;"></span>
                         </a>
                     </div><div class="soc-item">
-                        <a href="https://www.youtube.com/c/mobirise" target="_blank">
-                            <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social" style="font-size: 23px;"></span>
                         </a>
                     </div><div class="soc-item">
-                        <a href="https://instagram.com/mobirise" target="_blank">
-                            <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                        <a href="https://instagram.com/" target="_blank">
+                            <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social" style="font-size: 23px;"></span>
                         </a>
                     </div></div>
             </div>
             <div class="row row-copirayt">
-                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">DogTime&nbsp;</p>
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7" style="font-size: 18px;">DogTime&nbsp;</p>
             </div>
         </div>
     </div>

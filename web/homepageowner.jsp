@@ -82,7 +82,7 @@
                 
                 <p class="mbr-text mbr-fonts-style display-7">
                     Easy, quick and safe minding of your dog, <br>anytime, anywhere.</p>
-                <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="./signup.jsp">Sign-up</a></div>
+                <div class="mbr-section-btn mt-3"><a class="btn btn-primary display-4" href="application/list">Sign-up</a></div>
             </div>
         </div>
     </div>

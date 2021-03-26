@@ -42,11 +42,11 @@
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobiri.se">
-                        <img src="assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
+                    <a href="./whatareyou.jsp">
+                        <img src="images/dogicon2.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html#top">DogTime</a></span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="./landingpage.jsp">DogTime</a></span>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <div class="hamburger">
@@ -57,14 +57,14 @@
                 </div>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#features4-5">
-                            Services</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#image1-6">
+                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="./landingpage.jsp">
+                            Services</a></li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="./landingpage.jsp">
                             About us</a></li>
                     
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
+                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="./landingpage.jsp">Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="create.jsp">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="./whatareyou.jsp">Login</a></div>
             </div>
         </div>
     </nav>
@@ -92,7 +92,7 @@
                  
                     <div class="dragArea row"> 
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="name">
-                             <input type="text" name="name" placeholder="Username" class="form-control"  value="" id="name-form6-k">
+                             <input type="text" name="name" placeholder="Email" class="form-control"  value="" id="name-form6-k">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="pass">
                             <input type="text" name="pass" placeholder="Passsword" data-form-field="pass" class="form-control" value="" id="email-form6-k">

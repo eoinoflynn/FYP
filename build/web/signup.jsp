@@ -42,8 +42,8 @@
         <div class="container">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="https://mobiri.se">
-                        <img src="assets/images/logo.png" alt="Mobirise" style="height: 3rem;">
+                    <a href="./whatareyou.jsp">
+                        <img src="images/dogicon2.png" alt="Mobirise" style="height: 3rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-7" href="index.html#top">DogTime</a></span>
@@ -64,7 +64,7 @@
                     <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#contacts1-7">Contact us</a>
                     </li></ul>
                 
-                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="create.jsp">Login</a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="./whatareyou.jsp">Login</a></div>
             </div>
         </div>
     </nav>
@@ -92,13 +92,13 @@
                  
                     <div class="dragArea row"> 
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="uname">
-                             <input type="text" name="uname" placeholder="Username" class="form-control"  value="" id="name-form6-k">
+                             <input type="text" name="uname" placeholder="Email" class="form-control"  value="" id="name-form6-k">
                         </div>
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="pass">
                             <input type="text" name="pass" placeholder="Passsword" data-form-field="pass" class="form-control" value="" id="email-form6-k">
                         </div>             
                         
-                        <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Create User</button></div>
+                        <div class="col-auto mbr-section-btn align-center"><button type="submit" class="btn btn-primary display-4">Create Account</button></div>
                         &nbsp;
                         <div class="col-auto mbr-section-btn align-center"><a class="btn btn-primary display-4" href="login2.jsp">Login</a></div>
                     </div>

@@ -135,10 +135,9 @@ ResultSet resultSet = null;
 <td><b>Dog Breed</b></td>
 <td><b>Dog Age</b></td>
 <td><b>Additional</b></td>
-<td><b>Name</b></td>
+<td><b>Owner Name</b></td>
 
-<!-- <th class="text-center">Action</th> -->
-<td><b>Action</b></td>
+<td><b>Delete Application</b></td>
 </tr>
 <!-- <td><b>More</b></td>   -->
 <!-- </tr> -->
@@ -151,7 +150,7 @@ ResultSet resultSet = null;
 try{ 
 connection = DriverManager.getConnection(connectionUrl, userId, password);
 statement=connection.createStatement();
-String sql ="SELECT * FROM application WHERE name ='"+name+"'";
+String sql ="SELECT * FROM application WHERE userName ='"+name+"'";
 
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
@@ -171,7 +170,7 @@ while(resultSet.next()){
 <td><%=resultSet.getString("dage") %></td>
 <td><%=resultSet.getString("additional") %></td>
 <td><%=resultSet.getString("name") %></td>
- <td class="text-center"><a class='btn btn-info btn-xs' href=""><span class="glyphicon glyphicon-edit"></span> Apply</a> 
+ <td class="text-center"><a class="btn btn-danger btn-xs" href="deleteapp.jsp?appid=<%=resultSet.getString("appid") %>"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
 <!-- <td><button type="submit" class="btn btn-primary display-4">View</button></td> -->
 </tr>
 

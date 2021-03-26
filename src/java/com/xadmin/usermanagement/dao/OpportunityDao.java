@@ -284,5 +284,77 @@ public class OpportunityDao {
 		}
 		return opportunity;
     }
+    
+        public List<Opportunity> selectAllOpportunityLocation(String  location2) {
+        // using try-with-resources to avoid closing resources (boiler plate code)
+		List<Opportunity> opportunity = new ArrayList<>();
+		// Step 1: Establishing a Connection
+                String sta = "select * from opportunity where activity='"+location2+"' or sdate='"+location2+"' or edate='"+location2+"' or length='"+location2+"' or dname='"+location2+"' or dbreed='"+location2+"' or dage='"+location2+"' or additional='"+location2+"' or name='"+location2+"' or location ='" + location2 + "';";
+		try (Connection connection = getConnection();
+
+				// Step 2:Create a statement using connection object
+                        
+			PreparedStatement preparedStatement = connection.prepareStatement(sta)) {
+		// ----	 preparedStatement.setString(1, opportunity.getName());
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String activity = rs.getString("activity");
+            			String location = rs.getString("location");
+				String payment = rs.getString("payment");
+                                String sdate = rs.getString("sdate");
+                                String edate = rs.getString("edate");
+                                String length = rs.getString("length");
+                                String dname = rs.getString("dname");
+                                String dbreed = rs.getString("dbreed");
+                                String dage = rs.getString("dage");
+                                String additional = rs.getString("additional");
+                                String name = rs.getString("name");
+				opportunity.add(new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional, name));
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return opportunity;
+    }
+        
+        public List<Opportunity> selectAllOpportunityLocationOwner(String owner,String  location2) {
+        // using try-with-resources to avoid closing resources (boiler plate code)
+		List<Opportunity> opportunity = new ArrayList<>();
+		// Step 1: Establishing a Connection
+                String sta = "select * from application where name ='" + owner + "' and location ='" + location2 + "';";
+		try (Connection connection = getConnection();
+
+				// Step 2:Create a statement using connection object
+                        
+			PreparedStatement preparedStatement = connection.prepareStatement(sta)) {
+		// ----	 preparedStatement.setString(1, opportunity.getName());
+			// Step 3: Execute the query or update query
+			ResultSet rs = preparedStatement.executeQuery();
+
+			// Step 4: Process the ResultSet object.
+			while (rs.next()) {
+				int id = rs.getInt("id");
+				String activity = rs.getString("activity");
+            			String location = rs.getString("location");
+				String payment = rs.getString("payment");
+                                String sdate = rs.getString("sdate");
+                                String edate = rs.getString("edate");
+                                String length = rs.getString("length");
+                                String dname = rs.getString("dname");
+                                String dbreed = rs.getString("dbreed");
+                                String dage = rs.getString("dage");
+                                String additional = rs.getString("additional");
+                                String name = rs.getString("name");
+				opportunity.add(new Opportunity(id, activity, location, payment, sdate, edate, length, dname, dbreed, dage, additional, name));
+			}
+		} catch (SQLException e) {
+			printSQLException(e);
+		}
+		return opportunity;
+    }
 
 }

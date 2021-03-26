@@ -15,6 +15,7 @@ import java.util.logging.Logger;
  *
  * @author eoinp
  */
+/* Code taken and adapted from Java Database connectivity "https://www.youtube.com/watch?v=akW6bzoRcZo&app=desktop" */
 public class MyDbOwner {
         Connection con;
 

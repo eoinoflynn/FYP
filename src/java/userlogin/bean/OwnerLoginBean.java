@@ -9,7 +9,7 @@ package userlogin.bean;
  *
  * @author eoinp
  */
-/* Below code taken and adapted from https://www.javaguides.net/2019/03/login-form-using-jsp-servlet-jdbc-mysql-example.html*/
+/* Below code taken and adapted from https://www.codejava.net/coding/how-to-code-login-and-logout-with-java-servlet-jsp-and-mysql*/
 
 import java.io.Serializable;
 

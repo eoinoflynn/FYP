@@ -7,7 +7,7 @@ package com.xadmin.usermanagement.bean;
 
 /**
  *
- * @author eoinp
+ * Code taken and adapted from https://www.youtube.com/watch?v=-3m2_wHWXf4
  */
 public class Application {
     private int appid;
@@ -22,8 +22,11 @@ public class Application {
     private String dage;
     private String additional;
     private String name;
+    private String userName;
+    private String status;
+    private String message;
 
-    public Application(int appid, String activity, String location, String payment, String sdate, String edate, String length, String dname, String dbreed, String dage, String additional, String name) {
+    public Application(int appid, String activity, String location, String payment, String sdate, String edate, String length, String dname, String dbreed, String dage, String additional, String name, String userName, String status, String message) {
         this.appid = appid;
         this.activity = activity;
         this.location = location;
@@ -36,9 +39,12 @@ public class Application {
         this.dage = dage;
         this.additional = additional;
         this.name = name;
+        this.userName = userName;
+        this.status = status;
+        this.message = message;
     }
 
-    public Application(String activity, String location, String payment, String sdate, String edate, String length, String dname, String dbreed, String dage, String additional, String name) {
+    public Application(String activity, String location, String payment, String sdate, String edate, String length, String dname, String dbreed, String dage, String additional, String name, String userName, String status, String message) {
         this.activity = activity;
         this.location = location;
         this.payment = payment;
@@ -50,10 +56,10 @@ public class Application {
         this.dage = dage;
         this.additional = additional;
         this.name = name;
+        this.userName = userName;
+        this.status = status;
+        this.message = message;
     }
-    
-    
-
 
     public int getAppid() {
         return appid;
@@ -151,5 +157,30 @@ public class Application {
         this.name = name;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    
+    
 
 }
